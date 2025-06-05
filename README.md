@@ -1,12 +1,15 @@
 Step 1: Install JDK 17/21 on GNU/Linux - Ubuntu
+
 sudo apt update
 sudo apt install openjdk-17-jdk -y
 
 Step 2: Add Jenkins repository and key
+
 curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee /usr/share/keyrings/jenkins-keyring.asc > /dev/null
 
 
 Step 3: Add Jenkins repo to sources list
+
 echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
 
 
@@ -23,7 +26,7 @@ sudo systemctl enable jenkins
 sudo systemctl status jenkins
 
 
---------------------
+-------------------- pgm-5
 Reset Jenkins Admin Password (Manually)
 
 . STOP IT - sudo systemctl stop jenkins
@@ -32,8 +35,25 @@ Reset Jenkins Admin Password (Manually)
 . repeat step 6
 . http://localhost:8080
 
-tOO GET ADMINITRATIVE PASSOWRD:
+tOO GET ADMINITRATIVE PASSOWRD: (to continue normal process)
 
+
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+to update the version of gradle to 7(pgm-4)
+
+
+1. Remove old Gradle (if installed via apt) - sudo apt remove gradle
+2.  Download Gradle 7 - wget https://services.gradle.org/distributions/gradle-7.6.4-bin.zip -P /tmp
+sudo unzip -d /opt/gradle /tmp/gradle-7.6.4-bin.zip
+4.  update to gradle home
+export GRADLE_HOME=/opt/gradle/gradle-7.6.4
+export PATH=$GRADLE_HOME/bin:$PATH
+5.
+source ~/.bashrc
+gradle -v
 
 
 
