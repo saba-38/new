@@ -26,8 +26,8 @@ sudo systemctl enable jenkins
 sudo systemctl status jenkins
 
 
--------------------- pgm-5
-Reset Jenkins Admin Password (Manually)
+
+to Reset Jenkins Admin Password (Manually)
 
 . STOP IT - sudo systemctl stop jenkins
 . sudo mv /var/lib/jenkins/users /var/lib/jenkins/users_backup
@@ -35,23 +35,21 @@ Reset Jenkins Admin Password (Manually)
 . repeat step 6
 . http://localhost:8080
 
-tOO GET ADMINITRATIVE PASSOWRD: (to continue normal process)
-
-
+tO  GET ADMINITRATIVE PASSOWRD: (to continue normal process)
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 ---------------------------------------------------------------------
 ---------------------------------------------------------------------
-to update the version of gradle to 7(pgm-4)
+to update the version of gradle to 7(pgm-4) for migration
 
 
 1. Remove old Gradle (if installed via apt) - sudo apt remove gradle
 2.  Download Gradle 7 - wget https://services.gradle.org/distributions/gradle-7.6.4-bin.zip -P /tmp
 sudo unzip -d /opt/gradle /tmp/gradle-7.6.4-bin.zip
-4.  update to gradle home
+3.  update to gradle home
 export GRADLE_HOME=/opt/gradle/gradle-7.6.4
 export PATH=$GRADLE_HOME/bin:$PATH
-5.
+4.
 source ~/.bashrc
 gradle -v
 
