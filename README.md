@@ -61,7 +61,7 @@ gradle -v
 
 
 
-. sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
 
 
 
