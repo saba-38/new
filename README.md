@@ -1,3 +1,4 @@
+prgm-5
 Step 1: Install JDK 17/21 on GNU/Linux - Ubuntu
 
 sudo apt update
@@ -53,7 +54,11 @@ export PATH=$GRADLE_HOME/bin:$PATH
 source ~/.bashrc
 gradle -v
 
+------------------------------------------------------------------------------
 
+pgm-2 : to install eclispse
+sudo apt install snapd
+sudo snap install eclipse --classic
 
 
 
